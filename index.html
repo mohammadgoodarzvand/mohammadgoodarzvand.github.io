@@ -7,11 +7,14 @@
 
   <style>
     :root{
-      --paper:#f7f4ee;
-      --ink:#1f1c18;
-      --muted:#6f6a63;
-      --accent:#7b302c;
-      --line:#d8d2c4;
+      --paper:#e9decd;
+      --paper-deep:#dfd0bc;
+      --ink:#35291f;
+      --muted:#776658;
+      --accent:#70462f;
+      --accent-soft:#a77b5d;
+      --line:#d1bda5;
+      --panel:#f7efe2;
     }
 
     *{box-sizing:border-box}
@@ -19,7 +22,10 @@
     body{
       margin:0;
       color:var(--ink);
-      background:var(--paper);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.42), transparent 30%),
+        radial-gradient(circle at 85% 90%, rgba(112,70,47,.07), transparent 32%),
+        linear-gradient(135deg, var(--paper) 0%, var(--paper-deep) 100%);
       font-family:Georgia,"Times New Roman",serif;
       line-height:1.75;
     }
@@ -28,17 +34,37 @@
       max-width:880px;
       margin:45px auto;
       padding:60px 55px 55px;
-      background:#fbf9f4;
+      background:var(--panel);
       border:1px solid var(--line);
-      box-shadow:0 10px 35px rgba(55,42,25,.06);
+      box-shadow:0 14px 40px rgba(67,47,30,.12);
+      position:relative;
     }
 
-    header{text-align:center;margin-bottom:55px}
+    main::before{
+      content:"";
+      position:absolute;
+      top:18px;
+      left:50%;
+      width:56px;
+      height:2px;
+      transform:translateX(-50%);
+      background:var(--accent-soft);
+      opacity:.65;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:55px;
+      padding-bottom:28px;
+      border-bottom:1px solid var(--line);
+    }
 
     h1{
       font-size:40px;
       font-weight:normal;
       margin:0;
+      color:var(--accent);
+      letter-spacing:.01em;
     }
 
     .subtitle{
@@ -51,6 +77,18 @@
       font-size:26px;
       font-weight:normal;
       margin:55px 0 25px;
+      color:var(--accent);
+      position:relative;
+      padding-bottom:9px;
+    }
+
+    h2::after{
+      content:"";
+      display:block;
+      width:34px;
+      height:1px;
+      margin-top:8px;
+      background:var(--accent-soft);
     }
 
     h3{
@@ -75,6 +113,7 @@
     a{
       color:var(--accent);
       text-decoration:none;
+      border-bottom:1px solid rgba(112,70,47,.25);
     }
 
     a:hover{text-decoration:underline}
@@ -103,8 +142,8 @@
       max-width:260px;
       display:block;
       margin:20px 0;
-      border:1px solid var(--line);
-      box-shadow:0 6px 18px rgba(55,42,25,.08);
+      border:1px solid #c6af94;
+      box-shadow:0 8px 22px rgba(67,47,30,.14);
     }
 
     .item p .label{
@@ -139,9 +178,7 @@
     <section>
       <h2>About</h2>
       <p>
-        I am a Persian translator and editor working primarily in literature, theatre,
-        and related fields. My work often moves between text and performance,
-        between the page and the stage.
+        Persian translator and editor working primarily in literature, cinema, theatre, and related fields.
       </p>
     </section>
 
@@ -276,18 +313,18 @@
     <section>
       <h2>فارسی</h2>
       <p class="fa">
-        محمد گودرزوند، مترجم و ویراستار، در حوزه‌های ادبیات، تئاتر و زمینه‌های مرتبط فعالیت می‌کند.
+        محمد گودرزوند، مترجم و ویراستار، فعال در حوزه‌های ادبیات، سینما، تئاتر و زمینه‌های مرتبط.
       </p>
     </section>
 
     <section>
-      <h2>Contact &amp; Profiles</h2>
+      <h2>Contact</h2>
       <p>
         <a href="https://ir.linkedin.com/in/mohammad-goodarzvand-3398275a"
            target="_blank" rel="noopener">LinkedIn</a><br>
         <a href="https://www.instagram.com/mohammadgoodarzvand/"
            target="_blank" rel="noopener">Instagram</a><br>
-        <a href="mailto:mohammadgoodarzvand@gmail.com">Email</a>
+        <a href="mailto:mohammadgoodarzvand@gmail.com">Contact Us</a>
       </p>
     </section>
 
